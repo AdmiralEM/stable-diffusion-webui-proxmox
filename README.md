@@ -165,3 +165,64 @@ This section details the steps to install Stable Diffusion, a deep learning, tex
 ## Conclusion
 
 With these steps, you should be able to run Stable Diffusion in a Proxmox VM using an NVIDIA GPU passed through. This setup allows for efficient utilization of GPU resources for AI-based image generation.
+
+
+
+## Installing Stable Diffusion with NVIDIA GPU Passthrough in Proxmox VM
+
+This section details the steps to install Stable Diffusion, a deep learning, text-to-image model, in a Proxmox VM with an NVIDIA GPU passthrough.
+
+### Prerequisites
+
+- A VM in Proxmox with an NVIDIA GPU passthrough setup.
+- Ensure that the NVIDIA drivers are correctly installed in the VM.
+
+### Installation Steps
+
+1. **Set Up the VM:**
+   - Create a new VM in Proxmox or use an existing one where the NVIDIA GPU has been passed through.
+   - Install a compatible operating system (e.g., Ubuntu).
+
+2. **Install Dependencies:**
+   - Update the package lists and install necessary dependencies. For Ubuntu, you would typically run:
+     ```bash
+     sudo apt update
+     sudo apt install git python3 python3-pip
+     ```
+
+3. **Clone Stable Diffusion Repository:**
+   - Clone the Stable Diffusion repository from GitHub:
+     ```bash
+     git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+     cd stable-diffusion-webui
+     ```
+
+4. **Install Python Requirements:**
+   - Inside the cloned repository, install the required Python packages:
+     ```bash
+     pip3 install -r requirements.txt
+     ```
+
+5. **Download the Model:**
+   - Follow the instructions provided in the repository or on the [Stable Diffusion website](https://rentry.org/voldy) to download the necessary model files.
+   - Place the downloaded model files in the appropriate directory as instructed.
+
+6. **Run the Application:**
+   - Execute the script to start the Stable Diffusion web UI:
+     ```bash
+     python3 scripts/webui.py
+     ```
+   - This will start a local server, typically accessible via a web browser.
+
+7. **Accessing the Web UI:**
+   - Access the web UI through your browser by navigating to the IP address of the VM followed by the port number (default is usually `http://VM_IP:PORT`).
+
+### Post-Installation
+
+- **Testing:** After installation, test the setup by inputting text prompts into the Stable Diffusion web UI and generating images.
+- **Configuration Adjustments:** You may need to adjust configurations based on your specific requirements, such as changing the port number or setting up additional features.
+
+## Conclusion
+
+With these steps, you should be able to run Stable Diffusion in a Proxmox VM using an NVIDIA GPU passed through. This setup allows for efficient utilization of GPU resources for AI-based image generation.
+
